@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="me.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="main">
+    <div class="form-background">
+        <div class="width90">
+
+            <form action="https://httpbin.org/post"
+                  method="post"
+                  onsubmit="return validate()"
+                >
+                <fieldset>
+                    <legend>Contact Me</legend>
+                    <div>
+                        <label for="name">Name:<span class="required">*</span></label>
+                        <br>
+                        <input type="text" required id="name" name="name">
+                    </div>
+                    <div>
+                        <label for="address">Address:<span class="required">*</span></label>
+                        <br>
+                        <input type="text" required id="address" name="address">
+                    </div>
+                    <div>
+                        <label for="city">City:<span class="required">*</span></label>
+                        <br>
+                        <input type="text" required id="city" name="city" list="citys">
+                        <datalist id="citys">
+                            <option value="Ottawa">
+                            <option value="Fredericton">
+                            <option value="Halifax">
+                            <option value="CapeBreton">
+                            <option value="Toronto">
+                            <option value="Hamilton">
+                            <option value="Kitchener">
+                            <option value="St.Catharines">
+                            <option value="Windsor">
+                            <option value="Oshawa">
+                            <option value="Barrie">
+                            <option value="Kingston">
+                            <option value="Guelph">
+                            <option value="Sudbury">
+                            <option value="Regina">
+                            <option value="Calgary">
+                            <option value="Edmonton">
+                            <option value="Charlottetown">
+                            <option value="Kelowna">
+                            <option value="Abbotsford">
+                            <option value="Vancouver">
+                            <option value="Victoria">
+                            <option value="Saskatoon">
+                            <option value="Québec">
+                            <option value="Montréal">
+                            <option value="Sherbrooke">
+                            <option value="Trois-Rivières">
+                            <option value="Chicoutimi">
+                            <option value="Winnipeg">
+                            <option value="Saint-John's">
+                            <option value="Yellowknife">
+                            <option value="Whitehorse">
+                            <option value="Iqaluit">
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="postalCode">PostalCode<span class="required">*</span><span class="required" id="postalCodeMessage"></span></label>
+                        <br>
+                        <input type="text" required id="postalCode" name="postalCode">
+                    </div>
+
+                    <div>
+                        <br>
+                        <input type="radio" name="sel" value="Question" onchange="selChange()"> Question
+                        <input type="radio" name="sel" value="Comment" onchange="selChange()"> Comment
+                        <input type="radio" name="sel" value="Hiring"  onchange="selChange()"> Hiring
+                        <div>
+                            <textarea required rows="5"  cols="60" name="comment"></textarea>
+                        </div>
+                        <!-- Hiring -->
+                        <div id="hiringDiv"  style="display: none;">
+                            <label><span>hourly rate:</span><span class="required">*</span></label>
+                            <input type="number" required id="hiring" name="hiring">
+                        </div>
+                    </div>
+                    <div>
+                        <label><span>Must reply</span></label>
+                        <input type="checkbox" name="reply">
+                    </div>
+
+                </fieldset>
+                <div>
+                    <input type="submit">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script src="sc.js"></script>
+</body>
+</html>
